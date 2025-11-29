@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-str1 = "Welcome to "
-str2 = "Battery Street!"
-print(f"{str1}{str2}")
-#5ci setr
+str1 = "Welcome to"
+str2 = "Holberton School"
+print(f"{str1} {str2}!")
+#setr 5
