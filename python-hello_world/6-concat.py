@@ -1,4 +1,5 @@
 #!/usr/bin/python3
 str1 = "Welcome to "
 str2 = "Holberton School!"
-print(f"{str1}{str2}") #yenilik olsun deye comment :)
+print(str1, end="")
+print(str2)
