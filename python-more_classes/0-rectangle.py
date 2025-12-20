@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 class Rectangle:
-    """just rectangle"""
+    """the class that represent rectangle"""
     pass
