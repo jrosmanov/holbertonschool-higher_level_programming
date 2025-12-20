@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""This class was created for make square guy"""
+"""this will define empty square class """
 
 
 class Square:
-    """This class was created for make square guy"""
+    """reprezents empty class"""
     def __init__(self, size=0):
         if isinstance(size, int):
             if size >= 0:
