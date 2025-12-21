@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""python3 -c 'print(__import__("my_module").__doc__)"""
+"""modul that represent class"""
 
 
 class Rectangle:
-    """python3 -c 'print(__import__("my_module").MyClass.__doc__)"""
+    """the class that represent rectangle"""
 
     number_of_instances = 0
 
