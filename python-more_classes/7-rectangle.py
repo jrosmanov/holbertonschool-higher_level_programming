@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """modul that represent class"""
 
+
 class Rectangle:
     """the class that represent rectangle"""
 
@@ -8,7 +9,6 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        "
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
