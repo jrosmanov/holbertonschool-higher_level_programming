@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Creating square  class that inherits from BaseGeometry"""
 
 
