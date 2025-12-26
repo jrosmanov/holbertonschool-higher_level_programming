@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""defining class"""
+"""
+defining class
+"""
 
 
 def inherits_from(obj, a_class):
