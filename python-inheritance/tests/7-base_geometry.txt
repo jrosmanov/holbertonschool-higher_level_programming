@@ -1,0 +1,62 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+>>> isinstance(bg, BaseGeometry)
+True
+
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     print(1)
+1
+
+>>> try:
+...     bg.integer_validator()
+... except TypeError as e:
+...     print(1)
+1
+>>> try:
+...     bg.integer_validator("age")
+... except TypeError as e:
+...     print(1)
+1
+>>> try:
+...     bg.integer_validator("age", 1)
+... except TypeError as e:
+...     print(1)
+>>> try:
+...     bg.integer_validator("age", 0)
+... except ValueError as e:
+...     print(1)
+1
+>>> try:
+...     bg.integer_validator("age", "4")
+... except TypeError as e:
+...     print(1)
+1
+>>> try:
+...     bg.integer_validator("age", (4,))
+... except TypeError as e:
+...     print(1)
+1
+>>> try:
+...     bg.integer_validator("age", [4])
+... except TypeError as e:
+...     print(1)
+1
+>>> try:
+...     bg.integer_validator("age", True)
+... except TypeError as e:
+...     print(1)
+1
+>>> try:
+...     bg.integer_validator("age", {3,4})
+... except TypeError as e:
+...     print(1)
+1
+>>> try:
+...     bg.integer_validator("age", None)
+... except TypeError as e:
+...     print(1)
+1
+>>> 
