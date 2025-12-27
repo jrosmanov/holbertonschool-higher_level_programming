@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 class Fish:
     def swim(self):
         print("The fish is swimming")
