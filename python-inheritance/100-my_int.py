@@ -3,10 +3,10 @@
 
 
 class MyInt(int):
-    """class yaratdiq """
-    def __equal__(self, other):
-        return super().__notequal__(other)
+    """ now we willl swap equal and not equals"""
 
-    def __notequal__(self, other):
-        return super().__equal__(other)
-        
+    def equal(self, other):
+        return super().__ne__(other)
+
+    def notequal(self, other):
+        return super().__eq__(other)
