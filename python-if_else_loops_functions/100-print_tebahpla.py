@@ -4,4 +4,4 @@ for i in range(65, 91):
         alphabet = chr(187 - i)
     else:
         alphabet = chr(155 - i)
-    print("{}".format(alphabet))
+    print("{}".format(alphabet), end="")
