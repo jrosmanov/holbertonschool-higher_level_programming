@@ -5,4 +5,5 @@
 def write_file(filename="", text=""):
     """function is documented with this """
     with open(filename, "w") as file:
-        print(file.write(text), end="")
+        file.write(text)
+    return len(text)
