@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""need modul is documented"""
+"""
+need modul is documented
+"""
 
 
 def read_file(filename=""):
