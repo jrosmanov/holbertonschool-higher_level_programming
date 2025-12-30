@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-'''need modul is documented and long doc.'''
-
-
-
+"""Module that documented like 10 times!"""
 import json
+
+
 def from_json_string(my_str):
-        """function is documented with this"""
+    """function"""
+
     return json.loads(my_str)
