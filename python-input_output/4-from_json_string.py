@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-need modul is documented and long doc.
-"""
+'''need modul is documented and long doc.'''
+
 
 
 import json
