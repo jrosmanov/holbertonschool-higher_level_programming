@@ -17,7 +17,13 @@ def deserialize_from_xml(filename):
     try:
         tree = ET.parse(filename)
         root = tree.getroot()
+
         data = {}
         for child in root:
             data[child.tag] = child.text
 	
+        return data
+    except Exception as e:
+        print(f"Error: {e}")
+        return None
+
