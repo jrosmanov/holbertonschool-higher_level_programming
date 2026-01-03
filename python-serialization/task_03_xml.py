@@ -12,3 +12,8 @@ def serialize_to_xml(dictionary, filename):
     tree.write(filename)
 
     return True
+
+def deserialize_from_xml(filename):
+    try:
+        tree = ET.parse(filename)
+        root = tree.getroot()
