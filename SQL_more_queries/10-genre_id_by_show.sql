@@ -1,6 +1,4 @@
 -- sql file with no name
-SELECT s.title, g.genre_id
-FROM tv_shows s
-JOIN tv_show_genres 
-ON s.id = g.show_id
-ORDER BY s.title, g.genre_id;
+SELECT tv_shows.title AS title, tv_show_genres.genre_id AS genre_id 
+FROM tv_shows JOIN tv_show_genres 
+ON tv_shows.id = tv_show_genres.show_id ORDER BY title, genre_id ASC; 
