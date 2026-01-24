@@ -4,7 +4,7 @@ import MySQLdb
 import sys
 
 
-def connection():
+def connected():
     usrnm = sys.argv[1]
     psswrd = sys.argv[2]
     db_name = sys.argv[3]
@@ -30,4 +30,4 @@ def connection():
 
 
 if __name__ == "__main__":
-    connection()
+    connected()
