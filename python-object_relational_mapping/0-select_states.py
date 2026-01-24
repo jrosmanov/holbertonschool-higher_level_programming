@@ -22,3 +22,6 @@ if __name__ == "__main__":
 
     cur.execute("SELECT * FROM states ORDER BY id ASC")
 
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
