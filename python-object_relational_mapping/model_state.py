@@ -26,4 +26,3 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(engine)
     print("Table 'states' created (if it did not exist).")
-    
