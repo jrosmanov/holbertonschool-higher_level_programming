@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-"""ordinary type"""
+"""ordinary typ"""
 import MySQLdb
 import sys
-
 
 def connected():
     usrnm = sys.argv[1]
@@ -27,7 +26,6 @@ def connected():
 
     cursor.close()
     db.close()
-
 
 if __name__ == "__main__":
     connected()
