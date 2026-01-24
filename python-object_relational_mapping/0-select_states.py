@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 """ordinary type"""
 import MySQLdb
 import sys
