@@ -1,31 +1,33 @@
 #!/usr/bin/python3
-"""typical worlds"""
+"""ordinary type"""
 import MySQLdb
 import sys
 
 
-if __name__ == "__main__":
-
-    user = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
+def connected():
+    usrnm = sys.argv[1]
+    psswrd = sys.argv[2]
+    db_name = sys.argv[3]
 
     db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=user,
-        passwd=password,
-        db=database
-    )
+         host='localhost',
+         port=3306,
+         user=usrnm,
+         password=psswrd,
+         database=db_name)
 
-    cur = db.cursor()
+    cursor = db.cursor()
 
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    sql = "SELECT * FROM states ORDER BY states.id ASC;"
+    cursor.execute(sql)
 
-
-    rows = cur.fetchall()
+    rows = cursor.fetchall()
     for row in rows:
         print(row)
 
-    cur.close()
+    cursor.close()
     db.close()
+
+
+if __name__ == "__main__":
+    connected()
