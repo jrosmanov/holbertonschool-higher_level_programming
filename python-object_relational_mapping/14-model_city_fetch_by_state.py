@@ -26,9 +26,10 @@ if __name__ == "__main__":
     cities = session.query(City).join(State).order_by(City.id).all()
 
     for city in cities:
-        state_name =( session.query(State).filter
-        (State.id == city.state_id)
-        .first().name)
+        state_name = (
+            session.query(State)
+            .filter(State.id == city.state_id)
+            .first().name)
 
         print(f"{state_name}: ({city.id}) {city.name}")
 
