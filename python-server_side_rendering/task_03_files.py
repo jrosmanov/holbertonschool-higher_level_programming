@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from parsers import read_csv_products, read_json_products
+from parsers import read_json_products, read_csv_products
 
 app = Flask(__name__)
 
@@ -8,48 +8,29 @@ def products():
     source = request.args.get("source")
     product_id = request.args.get("id")
 
-    if source not in ("json", "csv"):
+    if source == "json":
+        data = read_json_products()
+    elif source == "csv":
+        data = read_csv_products()
+    else:
         return render_template(
             "product_display.html",
-            error="Wrong source",
-            products=[]
+            error="Wrong source"
         )
 
-    try:
-        if source == "json":
-            products = read_json_products()
-        else:
-            products = read_csv_products()
-    except Exception:
-        return render_template(
-            "product_display.html",
-            error="Error reading data file",
-            products=[]
-        )
-
-    # Filter by id if provided
-    if product_id is not None:
-        try:
-            product_id = int(product_id)
-            products = [p for p in products if p["id"] == product_id]
-            if not products:
-                return render_template(
-                    "product_display.html",
-                    error="Product not found",
-                    products=[]
-                )
-        except ValueError:
+    if product_id:
+        product_id = int(product_id)
+        data = [p for p in data if p["id"] == product_id]
+        if not data:
             return render_template(
                 "product_display.html",
-                error="Invalid product id",
-                products=[]
+                error="Product not found"
             )
 
     return render_template(
         "product_display.html",
-        products=products,
-        error=None
+        products=data
     )
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(host="0.0.0.0", port=5000)
