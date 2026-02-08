@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+</head>
+<body>
+
+    {% include 'header.html' %}
+
+    <h1>About Us</h1>
+    <p>Here have to be the text about us, but im too lazy so i will show you the cat</p>
+    <img src="{{ url_for('static', filename='cat.png') }}">
+
+    {% include 'footer.html' %}
+
+</body>
+</html>
