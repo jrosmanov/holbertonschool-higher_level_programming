@@ -1,7 +1,30 @@
 from flask import Flask, render_template, request
-from parsers import read_json_products, read_csv_products
+import json
+import csv
+import os
 
 app = Flask(__name__)
+
+def read_json_products():
+    with open("products.json", "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def read_csv_products():
+    products = []
+    if not os.path.exists("products.csv"):
+        return products
+
+    with open("products.csv", newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            products.append({
+                "id": int(row["id"]),
+                "name": row["name"],
+                "category": row["category"],
+                "price": float(row["price"])
+            })
+    return products
+
 
 @app.route("/products")
 def products():
@@ -31,6 +54,7 @@ def products():
         "product_display.html",
         products=data
     )
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
