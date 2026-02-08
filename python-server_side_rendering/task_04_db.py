@@ -29,7 +29,6 @@ def products():
             products=[]
         )
 
-    # Filter by id if provided
     if product_id is not None:
         try:
             product_id = int(product_id)
